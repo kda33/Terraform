@@ -11,7 +11,7 @@ resource "aws_instance" "web_server" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web_server.id]
   user_data              = file("user_data1.sh")
-  key_name="Frankfurt-key"
+  key_name="Frankfurt-key" # Ec2 Dashboard->Network & Security->Key Pairs->Name of Key in region = "eu-central-1"
 
   tags = {Name = "Web Server Build by Terraform"}
 }
